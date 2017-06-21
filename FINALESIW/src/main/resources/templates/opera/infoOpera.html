@@ -38,29 +38,36 @@
 				</button>
 				<a class="navbar-brand page-scroll" href="/">HOME</a>
 			</div>
-
-			 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     
                     <li>
-                        <a class="page-scroll" href="/artista">Artista</a>
+                        <a class="page-scroll" href="/artista">Artist</a>
                     </li>
                     <li>
-                        <li><a class="page-scroll" href="/opera">Opera da inserire</a></li>
-                    </li>
+                        <li><a class="page-scroll" href="/opera">Art form</a></li>
+                    
                    
-			 		<li><a class="page-scroll" href="/opere">Opere inserite</a></li>
+			 		<li><a class="page-scroll" href="/opere">Art insert</a></li>
 					
 					<li><a class="page-scroll" href="/admin">AMMINISTRATORE</a></li> 
-                    <li>
-                        <a class="page-scroll" href="/opere">Opere</a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="/user">Registrati</a>
+                        <li>
+                        <a class="page-scroll" href="/user">Register</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/login">Autenticazione</a>
+                        <a class="page-scroll" href="/login">LogIn and Logout</a>
+                    </li>
+            		  <li>
+                        <a class="page-scroll" href="/admin/opere">List of Works of art</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/admin/artista">Insert an artist</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/admin/opera">Insert a work of art</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/logout">Logout</a>
                     </li>
              
                 </ul>
@@ -79,7 +86,7 @@
 			<em>Art</em></h1>
 		  <footer class="blockquote-footer">Hai aggiunto la seguente<cite title="Source Title"> Opera</cite></footer>
 		</blockquote>
-        <ul>
+        
          <div>
 		<img th:src="${opera.url}" alt="img-rounded" style="height: 400px; width:400" class="img-circle" />
         </div>
@@ -87,22 +94,22 @@
 		<table class="table table-hover">
 		<tr>
 			<td>
-		<li th:text="#{label.titolo} +' '+ ${opera.titolo}"></li>
+		<div th:text="#{label.titolo} +' '+ ${opera.titolo}"></div>
 			</td>
 		</tr>
 		<tr>
 			<td>
-		<li th:text="#{label.anno} +' '+ ${opera.anno}"></li>
+		<div th:text="#{label.anno} +' '+ ${opera.anno}"></div>
 			</td>
 		</tr>
 		<tr>
 			<td>
-		<li th:text="#{label.tecnica} +' '+ ${opera.tecnica}"></li>
+		<div th:text="#{label.tecnica} +' '+ ${opera.tecnica}"></div>
 			</td>
 		</tr>
 		<tr>
 			<td>
-		<li th:if="${opera.dimensione}" th:text="#{label.dimensione} +' '+ ${opera.dimensione}"></li>
+		<div th:if="${opera.dimensione}" th:text="#{label.dimensione} +' '+ ${opera.dimensione}"></div>
 			</td>
 		</tr>
 		</table>
@@ -119,14 +126,13 @@
 			    <span>
 			    <button type="submit" class="btn btn-primary">Torna indietro</button>
 			    </span></a>
-	</ul>
         </div>
       </div>  
       <div class="footer">
 		<div class="overlayer">
 			<div class="container">
 				<div class="row">
-					<div class="credits">&copy; Giacomo Bonnani---Sorin Oancea</div>
+					<div class="credits">&copy; Giacomo Bonanni---Sorin Oancea</div>
 				</div>
 			</div>
 		</div>

@@ -39,36 +39,38 @@
             </div>
 
           
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     
-                    <<!-- li>
-                        <a class="page-scroll" href="/artista">Artista</a>
+                    <li>
+                        <a class="page-scroll" href="/artista">Artist</a>
                     </li>
                     <li>
-                        <li><a class="page-scroll" href="/opera">Opera da inserire</a></li>
-                    </li>
+                        <li><a class="page-scroll" href="/opera">Art form</a></li>
+                    
                    
-			 		<li><a class="page-scroll" href="/opere">Opere inserite</a></li>
+			 		<li><a class="page-scroll" href="/opere">Art insert</a></li>
 					
 					<li><a class="page-scroll" href="/admin">AMMINISTRATORE</a></li> 
-                    <li>
-                        <a class="page-scroll" href="/opere">Opere</a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="/user">Registrati</a>
+                        <li>
+                        <a class="page-scroll" href="/user">Register</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/login">Autenticazione</a>
-                    </li> -->
-              <li>
+                        <a class="page-scroll" href="/login">LogIn and Logout</a>
+                    </li>
+            		  <li>
+                        <a class="page-scroll" href="/admin/opere">List of Works of art</a>
+                    </li>
+                     <li>
                         <a class="page-scroll" href="/admin/artista">Insert an artist</a>
                     </li>
-                   
-			 		<li><a class="page-scroll" href="/admin/opere">Works of art list</a></li>
-					
-					<li><a class="page-scroll" href="/logout">logout</a></li> 
+                     <li>
+                        <a class="page-scroll" href="/admin/opera">Insert a work of art</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/logout">Logout</a>
+                    </li>
+             
                 </ul>
                 </div>
             </div>
@@ -99,11 +101,11 @@
 					<label class="col-sm-2 control-label">Titolo:</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" th:field="*{titolo}"
-							th:errorclass="has-error" /> <span class="help-block">
+							th:errorclass="has-error" /><!--  <span class="help-block"> -->
 							<ul>
 								<li th:each="err : ${#fields.errors('titolo')}" th:text="${err}" />
 							</ul>
-						</span>
+						<!-- </span> -->
 					</div>
 				</div>
 				<div class="form-group"
@@ -111,11 +113,11 @@
 					<label class="col-sm-2 control-label">Anno:</label>
 					<div class="col-sm-5">
 						<input type="text"  class="form-control" th:field="*{anno}"
-							th:errorclass="has-error"  /> <span class="help-block">
+							th:errorclass="has-error"  /><!--  <span class="help-block"> -->
 							<ul>
 								<li th:each="err : ${#fields.errors('anno')}" th:text="${err}" />
 							</ul>
-						</span>
+						<!-- </span> -->
 					</div>
 				</div>
 				<div class="form-group"
@@ -123,12 +125,12 @@
 					<label class="col-sm-2 control-label">Tecnica:</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" th:field="*{tecnica}"
-							th:errorclass="has-error" /> <span class="help-block">
+							th:errorclass="has-error" /> <!-- <span class="help-block"> -->
 							<ul>
 								<li th:each="err : ${#fields.errors('tecnica')}"
 									th:text="${err}" />
 							</ul>
-						</span>
+						<!-- </span> -->
 					</div>
 				</div>
 				<div class="form-group"
@@ -136,12 +138,12 @@
 					<label class="col-sm-2 control-label">Dimensione:</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" th:field="*{dimensione}"
-							th:errorclass="has-error" /> <span class="help-block">
+							th:errorclass="has-error" /><!--  <span class="help-block"> -->
 							<ul>
 								<li th:each="err : ${#fields.errors('dimensione')}"
 									th:text="${err}" />
 							</ul>
-						</span>
+						<!-- </span> -->
 						</div>
 						</div>
 						
@@ -155,7 +157,9 @@
 		 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="pager">
+					<li>
 					<button type="submit" class="btn btn-primary">Invia</button>
+					</li>
 					</ul>
 				
 				</div>
@@ -179,7 +183,7 @@
 		<div class="overlayer">
 			<div class="container">
 				<div class="row">
-					<div class="credits">&copy; Giacomo Bonnani---Sorin Oancea</div>
+					<div class="credits">&copy; Giacomo Bonanni---Sorin Oancea</div>
 				</div>
 			</div>
 		</div>

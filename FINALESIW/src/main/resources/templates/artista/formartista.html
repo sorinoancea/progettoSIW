@@ -24,7 +24,8 @@
 
 </head>
 
-<body style="background-image: url('http://picslife.ru/wp-content/uploads/2012/11/krasivyie-kartinyi-maslom-hudozhnika-leonida-afremova_2.jpg')">
+<body
+	style="background-image: url('http://picslife.ru/wp-content/uploads/2012/11/krasivyie-kartinyi-maslom-hudozhnika-leonida-afremova_2.jpg')">
 
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
@@ -38,28 +39,36 @@
 				<a class="navbar-brand page-scroll" href="/">HOME</a>
 			</div>
 
-			 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     
                     <li>
-                        <a class="page-scroll" href="/artista">Artista</a>
+                        <a class="page-scroll" href="/artista">Artist</a>
                     </li>
                     <li>
-                        <li><a class="page-scroll" href="/opera">Opera da inserire</a></li>
-                    </li>
+                        <li><a class="page-scroll" href="/opera">Art form</a></li>
+                    
                    
-			 		<li><a class="page-scroll" href="/opere">Opere inserite</a></li>
+			 		<li><a class="page-scroll" href="/opere">Art insert</a></li>
 					
 					<li><a class="page-scroll" href="/admin">AMMINISTRATORE</a></li> 
-                    <li>
-                        <a class="page-scroll" href="/opere">Opere</a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="/user">Registrati</a>
+                        <li>
+                        <a class="page-scroll" href="/user">Register</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/login">Autenticazione</a>
+                        <a class="page-scroll" href="/login">LogIn and Logout</a>
+                    </li>
+            		  <li>
+                        <a class="page-scroll" href="/admin/opere">List of Works of art</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/admin/artista">Insert an artist</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/admin/opera">Insert a work of art</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/logout">Logout</a>
                     </li>
              
                 </ul>
@@ -67,78 +76,90 @@
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-	
-<div class="main">
 
-<br></br><br></br>		
-<blockquote class="blockquote blockquote">
-<h1 class="text-left">
-				<em>Artist</em></h1>
-				  <footer class="blockquote-footer"><cite title="Source Title">Artista</cite></footer>
-</blockquote>
+	<div class="main">
 
-	
-	<form class="form-horizontal" action="#" th:action="@{/admin/artistainfo}" th:object="${artista}"
-		method="post">
-		
+		<br></br> <br></br>
+		<blockquote class="blockquote blockquote">
+			<h1 class="text-left">
+				<em>Artist</em>
+			</h1>
+			<footer class="blockquote-footer">
+				<cite title="Source Title">Artista</cite>
+			</footer>
+		</blockquote>
+
+
+		<form class="form-horizontal" action="#"
+			th:action="@{/admin/artistainfo}" th:object="${artista}"
+			method="post">
+
 			<div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
-					<p th:text="#{form.hasErrors}">Error Message</p>
-				</div>
+				<p th:text="#{form.hasErrors}">Error Message</p>
+			</div>
 
-				<input type="hidden" th:field="*{id}" />
-				
-		<div>
-			<div class="form-group"
+			<input type="hidden" th:field="*{id}" />
+
+			<div>
+				<div class="form-group"
 					th:class="${#fields.hasErrors('nome')} ? 'form-group has-error' : 'form-group'">
 					<label class="col-sm-4 control-label">Nome:</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" th:field="*{nome}"
-							th:errorclass="has-error" /> <span class="help-block">
-							<ul>
-								<li th:each="err : ${#fields.errors('nome')}" th:text="${err}" />
-							</ul>
-						</span>
+							th:errorclass="has-error" />
+						<!--	<span class="help-block">  -->
+						<ul>
+							<li th:each="err : ${#fields.errors('nome')}" th:text="${err}" />
+						</ul>
+						<!-- </span> -->
 					</div>
 				</div>
-			<div class="form-group"
+				<div class="form-group"
 					th:class="${#fields.hasErrors('cognome')} ? 'form-group has-error' : 'form-group'">
 					<label class="col-sm-4 control-label">Cognome:</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" th:field="*{cognome}"
-							th:errorclass="has-error" /> <span class="help-block">
-							<ul>
-								<li th:each="err : ${#fields.errors('cognome')}" th:text="${err}" />
-							</ul>
-						</span>
+							th:errorclass="has-error" />
+						<!-- 							<span class="help-block">
+ -->
+						<ul>
+							<li th:each="err : ${#fields.errors('cognome')}" th:text="${err}" />
+						</ul>
+						<!-- 	</span> -->
 					</div>
 				</div>
-			<div class="form-group"
+				<div class="form-group"
 					th:class="${#fields.hasErrors('nazionalita')} ? 'form-group has-error' : 'form-group'">
 					<label class="col-sm-4 control-label">Nazionalita:</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" th:field="*{nazionalita}"
-							th:errorclass="has-error" /> <span class="help-block">
-							<ul>
-								<li th:each="err : ${#fields.errors('nazionalita')}" th:text="${err}" />
-							</ul>
-						</span>
+							th:errorclass="has-error" />
+						<!-- <span class="help-block"> -->
+						<ul>
+							<li th:each="err : ${#fields.errors('nazionalita')}"
+								th:text="${err}" />
+						</ul>
+						<!-- 						</span>
+ -->
 					</div>
 				</div>
-			<div>
+				<div>
 					<div class="form-group"
-					th:class="${#fields.hasErrors('annoNascita')} ? 'form-group has-error' : 'form-group'">
-					<label class="col-sm-4 control-label">Anno Nascita:</label>
-					<div class="col-sm-2">
-						<input type="text" class="form-control" th:field="*{annoNascita}"
-							th:errorclass="has-error" /> <span class="help-block">
+						th:class="${#fields.hasErrors('annoNascita')} ? 'form-group has-error' : 'form-group'">
+						<label class="col-sm-4 control-label">Anno Nascita:</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" th:field="*{annoNascita}"
+								th:errorclass="has-error" />
+							<!-- <span class="help-block"> -->
 							<ul>
-								<li th:each="err : ${#fields.errors('annoNascita')}" th:text="${err}" />
+								<li th:each="err : ${#fields.errors('annoNascita')}"
+									th:text="${err}" />
 							</ul>
-						</span>
+							<!-- </span> -->
+						</div>
 					</div>
-				</div>
-			
-<!-- 					 <select id="anno"
+
+					<!-- 					 <select id="anno"
           			name="anno" >
 				    <option>January</option>      
 				    <option>February</option>      
@@ -153,52 +174,55 @@
 				    <option>November</option>      
 				    <option>December</option>      
   					</select> -->
-  				
-			<div class="form-group"
-					th:class="${#fields.hasErrors('annoMorte')} ? 'form-group has-error' : 'form-group'">
-					<label class="col-sm-4 control-label">Anno Morte:</label>
-					<div class="col-sm-2">
-						<input type="text" class="form-control" th:field="*{annoMorte}"
-							th:errorclass="has-error" /> <span class="help-block">
+
+					<div class="form-group"
+						th:class="${#fields.hasErrors('annoMorte')} ? 'form-group has-error' : 'form-group'">
+						<label class="col-sm-4 control-label">Anno Morte:</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" th:field="*{annoMorte}"
+								th:errorclass="has-error" />
+							<!-- <span class="help-block"> -->
 							<ul>
-								<li th:each="err : ${#fields.errors('annoMorte')}" th:text="${err}" />
+								<li th:each="err : ${#fields.errors('annoMorte')}"
+									th:text="${err}" />
 							</ul>
-						</span>
+							<!-- </span> -->
+						</div>
 					</div>
-				</div>
-				
-				<!-- <div class="form-group">
+
+					<!-- <div class="form-group">
 						<label class="col-sm-4 control-label glyphicon glyphicon-camera"> Url: </label>
 						<div class="col-sm-5">
 							<input	type="text" class="form-control" th:field="*{url}" />			
 							<span th:if="${#fields.hasErrors('url')}" th:text="#{label.mandatory}">Error</span>
 							</div>
 		 				</div> -->
-				
-		</div>
-		
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="pager">
-					<li class="previous">
-				<button type="submit" class="btn btn-primary">Invia</button>
-					</li>
-				</ul>
-					</div> 
+
 				</div>
-			</form>
-			
-			 <div class="footer">
-		<div class="overlayer">
-			<div class="container">
-				<div class="row">
-					<div class="credits">&copy; Giacomo Bonnani---Sorin Oancea</div>
+
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="pager">
+						<li class="previous">
+							<button type="submit" class="btn btn-primary">Invia</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</form>
+
+		<div class="footer">
+			<div class="overlayer">
+				<div class="container">
+					<div class="row">
+						<div class="credits">&copy; Giacomo Bonanni---Sorin Oancea</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-  </div>	      
-	
-	
-	
-	</body>
+
+
+
+</body>
 </html>

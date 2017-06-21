@@ -43,24 +43,32 @@
                 <ul class="nav navbar-nav navbar-left">
                     
                     <li>
-                        <a class="page-scroll" href="/artista">Artista</a>
+                        <a class="page-scroll" href="/artista">Artist</a>
                     </li>
                     <li>
-                        <li><a class="page-scroll" href="/opera">Opera da inserire</a></li>
-                    </li>
+                        <li><a class="page-scroll" href="/opera">Art form</a></li>
+                    
                    
-			 		<li><a class="page-scroll" href="/opere">Opere inserite</a></li>
+			 		<li><a class="page-scroll" href="/opere">Art insert</a></li>
 					
 					<li><a class="page-scroll" href="/admin">AMMINISTRATORE</a></li> 
-                    <li>
-                        <a class="page-scroll" href="/opere">Opere</a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="/user">Registrati</a>
+                        <li>
+                        <a class="page-scroll" href="/user">Register</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/login">Autenticazione</a>
+                        <a class="page-scroll" href="/login">LogIn and Logout</a>
+                    </li>
+            		  <li>
+                        <a class="page-scroll" href="/admin/opere">List of Works of art</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/admin/artista">Insert an artist</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/admin/opera">Insert a work of art</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/logout">Logout</a>
                     </li>
              
                 </ul>
@@ -75,8 +83,8 @@
 			
 <blockquote class="blockquote blockquote">
 <h1 class="text-left">                                 
-				<em>Registrazione</em></h1>
-				  <footer class="blockquote-footer"><cite title="Source Title">Introdure i propri dati</cite></footer>
+				<em>Register</em></h1>
+				  <footer class="blockquote-footer"><cite title="Source Title">Introduce your personal data</cite></footer>
 </blockquote>
 	<br></br><br></br><br></br><br></br><br></br><br></br>
 	
@@ -88,11 +96,11 @@
 					<label class="col-sm-4 control-label">Nome:</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" th:field="*{firstName}"
-							th:errorclass="has-error" /> <span class="help-block">
+							th:errorclass="has-error" /> <!-- <span class="help-block"> -->
 							<ul>
-								<li th:each="err : ${#fields.errors('firstName')}" th:text="${err}" />
+							<li th:each="err : ${#fields.errors('firstName')}" th:text="${err}"/> 
 							</ul>
-						</span>
+						<!-- </span> -->
 					</div>
 				</div>
 			<div class="form-group"
@@ -100,11 +108,11 @@
 					<label class="col-sm-4 control-label">Cognome:</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" th:field="*{lastName}"
-							th:errorclass="has-error" /> <span class="help-block">
+							th:errorclass="has-error" /> <!-- <span class="help-block"> -->
 							<ul>
 								<li th:each="err : ${#fields.errors('lastName')}" th:text="${err}" />
 							</ul>
-						</span>
+						<!-- </span> -->
 					</div>
 				</div>
 			<div class="form-group"
@@ -112,11 +120,11 @@
 					<label class="col-sm-4 control-label">Eta:</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" th:field="*{age}"
-							th:errorclass="has-error" /> <span class="help-block">
+							th:errorclass="has-error" /> <!-- <span class="help-block"> -->
 							<ul>
 								<li th:each="err : ${#fields.errors('age')}" th:text="${err}" />
 							</ul>
-						</span>
+						<!-- </span> -->
 					</div>
 				</div>
 			<div>
@@ -125,11 +133,11 @@
 					<label class="col-sm-4 control-label">Username:</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" th:field="*{username}"
-							th:errorclass="has-error" /> <span class="help-block">
+							th:errorclass="has-error" /> <!-- <span class="help-block"> -->
 							<ul>
 								<li th:each="err : ${#fields.errors('username')}" th:text="${err}" />
 							</ul>
-						</span>
+						<!-- </span> -->
 					</div>
 				</div>
 			<div class="form-group"
@@ -137,18 +145,18 @@
 					<label class="col-sm-4 control-label">Password:</label>
 					<div class="col-sm-2">
 						<input type="text" class="form-control" th:field="*{password}"
-							th:errorclass="has-error" /> <span class="help-block">
+							th:errorclass="has-error" /> <!-- <span class="help-block"> -->
 							<ul>
 								<li th:each="err : ${#fields.errors('password')}" th:text="${err}" />
 							</ul>
-						</span>
+						<!-- </span> -->
 					</div>
 				</div>
 		</div>
 		
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="pager">
-					<button type="submit" class="btn btn-primary">Invia</button>
+					<li><button type="submit" class="btn btn-primary">Invia</button></li>
 					</ul>
 				
 				</div>
@@ -161,7 +169,7 @@
 		<div class="overlayer">
 			<div class="container">
 				<div class="row">
-					<div class="credits">&copy; Giacomo Bonnani---Sorin Oancea</div>
+					<div class="credits">&copy; Giacomo Bonanni---Sorin Oancea</div>
 				</div>
 			</div>
 		</div>

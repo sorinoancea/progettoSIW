@@ -38,29 +38,36 @@
 				<a class="navbar-brand page-scroll" href="index.html">HOME</a>
 			</div>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     
                     <li>
-                        <a class="page-scroll" href="/artista">Artista</a>
+                        <a class="page-scroll" href="/artista">Artist</a>
                     </li>
                     <li>
-                        <li><a class="page-scroll" href="/opera">Opera da inserire</a></li>
-                    </li>
+                        <li><a class="page-scroll" href="/opera">Art form</a></li>
+                    
                    
-			 		<li><a class="page-scroll" href="/opere">Opere inserite</a></li>
+			 		<li><a class="page-scroll" href="/opere">Art insert</a></li>
 					
 					<li><a class="page-scroll" href="/admin">AMMINISTRATORE</a></li> 
-                    <li>
-                        <a class="page-scroll" href="/opere">Opere</a>
-                    </li>
-                    
-                    <li>
-                        <a class="page-scroll" href="/user">Registrati</a>
+                        <li>
+                        <a class="page-scroll" href="/user">Register</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/login">Autenticazione</a>
+                        <a class="page-scroll" href="/login">LogIn and Logout</a>
+                    </li>
+            		  <li>
+                        <a class="page-scroll" href="/admin/opere">List of Works of art</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/admin/artista">Insert an artist</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="/admin/opera">Insert a work of art</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/logout">Logout</a>
                     </li>
              
                 </ul>
@@ -73,37 +80,36 @@
 
 		<div class="center">
 		<div class="container tim-container">
-	<br><br></br></br><br></br><br></br><br></br>
+	<br><br></br><br></br><br></br><br></br><br></br>
 		<blockquote class="blockquote blockquote">
 <h1 class="text-left">
 				<em>Artist</em></h1>
 				  <footer class="blockquote-footer"><cite title="Source Title">Artista</cite></footer>
 </blockquote>
 	<table class="table table-hover">
-             <ul>
    		<!-- <img th:src="${opera.url}" alt="opera immagine"
 			style="height: 300px; width: 300px" /> -->
 			
 		<!-- <img th:src="${artista.url}" style="height: 300px; width: 300px" /> -->
 		<tr>
 			<td>
-		<li th:text="#{label.nome} +' '+ ${artista.nome}"></li>
+		<div th:text="#{label.nome} +' '+ ${artista.nome}"></div>
 			</td>
 		</tr>
 		<tr>
 			<td>
-		<li th:text="#{label.cognome} +' '+ ${artista.cognome}"></li>
+		<div th:text="#{label.cognome} +' '+ ${artista.cognome}"></div>
 			</td>
 		</tr>
 		<tr>
 			<td>
-		<li th:text="#{label.annoNascita} +' '+ ${artista.annoNascita}"></li>
+		<div th:text="#{label.annoNascita} +' '+ ${artista.annoNascita}"></div>
 			</td>
 		</tr>
 		
 		<tr>
 			<td>
-		<li th:text="#{label.annoMorte} +' '+ ${artista.annoMorte}"></li>
+		<div th:text="#{label.annoMorte} +' '+ ${artista.annoMorte}"></div>
 			</td>
 		</tr>
 		<!-- <ul>
@@ -116,9 +122,9 @@
 		</ul> -->
 
 
-			</ul>
+			
 			</table>
-			<br><br></br></br>
+			<br></br><br></br>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="pager">
  							<li class="previous"><a href="/artista">Ritorna indietro</a></li>
@@ -130,7 +136,7 @@
  							<li class="previous"><a href="/">Home</a></li>
 							</ul>
 			</div>
-	<br><br></br></br><br></br><br></br><br></br><br><br></br></br><br></br><br></br><br></br>
+	<br><br></br><br></br><br></br><br></br><br><br></br><br></br><br></br><br></br>
         </div>
       </div>  
      <div class="footer">
@@ -138,7 +144,7 @@
 			<div class="container">
 				<br></br><br></br><br></br>
 				<div class="row">
-					<div class="credits">&copy; Giacomo Bonnani---Sorin Oancea</div>
+					<div class="credits">&copy; Giacomo Bonanni---Sorin Oancea</div>
 				</div>
 			</div>
 		</div>
